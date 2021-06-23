@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<button id="b01" type="button">click and get users</button>
+<br/>
+<br/>
+<div>
+    Please check the Network's response headers
+</div>
+
+
+<script>
+    $("#b01").click(function () {
+
+        $.ajax({
+            url : 'http://localhost:9000/session/testings/1',
+            type : "get",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            success : function(data){
+                console.log(data);
+            }
+        });
+    });
+</script>
+</body>
+</html>
